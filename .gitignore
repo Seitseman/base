@@ -128,3 +128,9 @@ qa/pull-tester/test.*/*
 .idea
 CMakeLists.txt
 cmake-build-debug
+/src/test/test_base
+/src/base-tx
+/src/based
+/src/base-cli
+/src/qt/base-qt
+/src/qt/test/test_base-qt

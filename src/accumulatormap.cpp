@@ -1,4 +1,4 @@
-// Copyright (c) 2017-2018 The PIVX developers
+// Copyright (c) 2017-2018 The BASE developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -88,10 +88,16 @@ uint256 AccumulatorMap::GetCheckpoint()
 
     //Prevent possible overflows from future changes to the list and forgetting to update this code
     assert(zerocoinDenomList.size() == 8);
+
     for (auto& denom : zerocoinDenomList) {
         CBigNum bnValue = mapAccumulators.at(denom)->getValue();
+
+        //LogPrintf("%s -> accumulator %sx\n", denom, bnValue.GetHex());
+
         uint32_t nCheckSum = GetChecksum(bnValue);
         nCheckpoint = nCheckpoint << 32 | nCheckSum;
+
+        LogPrintf("%s -> accumulator %sx\n", denom, nCheckpoint.GetHex());
     }
 
     return nCheckpoint;

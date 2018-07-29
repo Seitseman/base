@@ -8,7 +8,7 @@
 ///
 /// \copyright  Copyright 2013 Ian Miers, Christina Garman and Matthew Green
 /// \license    This project is released under the MIT license.
-// Copyright (c) 2017 The PIVX developers
+// Copyright (c) 2017 The BASE developers
 
 #include "ParamGeneration.h"
 #include <string>
@@ -38,8 +38,7 @@ namespace libzerocoin {
 /// in length, and 3072 bits is strongly recommended.
 ///
 
-void
-CalculateParams(ZerocoinParams &params, CBigNum N, string aux, uint32_t securityLevel)
+void CalculateParams(ZerocoinParams &params, CBigNum N, string aux, uint32_t securityLevel)
 {
 	params.initialized = false;
 	params.accumulatorParams.initialized = false;
