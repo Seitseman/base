@@ -1,18 +1,18 @@
 // Copyright (c) 2009-2010 Satoshi Nakamoto
 // Copyright (c) 2009-2014 The Bitcoin developers
-// Copyright (c) 2015-2017 The PIVX developers
+// Copyright (c) 2015-2017 The BASE developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
 #ifndef BITCOIN_CHAIN_H
 #define BITCOIN_CHAIN_H
 
+#include "libzerocoin/Denominations.h"
 #include "pow.h"
 #include "primitives/block.h"
 #include "tinyformat.h"
 #include "uint256.h"
 #include "util.h"
-#include "libzerocoin/Denominations.h"
 
 #include <vector>
 
@@ -177,11 +177,11 @@ public:
 
     //! (memory only) Sequential id assigned to distinguish order in which blocks are received.
     uint32_t nSequenceId;
-    
+
     //! zerocoin specific fields
     std::map<libzerocoin::CoinDenomination, int64_t> mapZerocoinSupply;
     std::vector<libzerocoin::CoinDenomination> vMintDenominationsInBlock;
-    
+
     void SetNull()
     {
         phashBlock = NULL;
@@ -232,8 +232,7 @@ public:
         nTime = block.nTime;
         nBits = block.nBits;
         nNonce = block.nNonce;
-        if(block.nVersion > 3)
-            nAccumulatorCheckpoint = block.nAccumulatorCheckpoint;
+        nAccumulatorCheckpoint = block.nAccumulatorCheckpoint;
 
         //Proof of Stake
         bnChainTrust = uint256();
@@ -253,7 +252,7 @@ public:
             nStakeTime = 0;
         }
     }
-    
+
 
     CDiskBlockPos GetBlockPos() const
     {
@@ -477,12 +476,9 @@ public:
         READWRITE(nTime);
         READWRITE(nBits);
         READWRITE(nNonce);
-        if(this->nVersion > 3) {
-            READWRITE(nAccumulatorCheckpoint);
-            READWRITE(mapZerocoinSupply);
-            READWRITE(vMintDenominationsInBlock);
-        }
-
+        READWRITE(nAccumulatorCheckpoint);
+        READWRITE(mapZerocoinSupply);
+        READWRITE(vMintDenominationsInBlock);
     }
 
     uint256 GetBlockHash() const
@@ -528,7 +524,6 @@ public:
     {
         if (vChain.size() < 1)
             return NULL;
-
         CBlockIndex* pindex = vChain[vChain.size() - 1];
 
         if (fProofOfStake) {

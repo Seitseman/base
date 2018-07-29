@@ -1,4 +1,4 @@
-// Copyright (c) 2018 The PIVX developers
+// Copyright (c) 2018 The BASE developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -32,8 +32,8 @@ namespace AccumulatorCheckpoints
         else
             return false;
 
-        if (v.empty())
-            return false;
+        //if (v.empty())
+        //    return false;
 
         for (unsigned int idx = 0; idx < v.size(); idx++) {
             const UniValue &val = v[idx];

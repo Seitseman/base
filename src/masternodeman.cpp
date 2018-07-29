@@ -1,5 +1,5 @@
 // Copyright (c) 2014-2015 The Dash developers
-// Copyright (c) 2015-2018 The PIVX developers
+// Copyright (c) 2015-2018 The BASE developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -13,7 +13,7 @@
 #include <boost/filesystem.hpp>
 #include <boost/lexical_cast.hpp>
 
-#define MN_WINNER_MINIMUM_AGE 8000    // Age in seconds. This should be > MASTERNODE_REMOVAL_SECONDS to avoid misconfigured new nodes in the list.
+#define MN_WINNER_MINIMUM_AGE 8    // Age in seconds. This should be > MASTERNODE_REMOVAL_SECONDS to avoid misconfigured new nodes in the list.
 
 /** Masternode manager */
 CMasternodeMan mnodeman;
@@ -986,7 +986,7 @@ void CMasternodeMan::ProcessMessage(CNode* pfrom, std::string& strCommand, CData
 
         CValidationState state;
         CMutableTransaction tx = CMutableTransaction();
-        CTxOut vout = CTxOut(9999.99 * COIN, obfuScationPool.collateralPubKey);
+        CTxOut vout = CTxOut(MASTERNODE_ACCEPTABLE_INPUTS_CHECK_AMOUNT * COIN, obfuScationPool.collateralPubKey);
         tx.vin.push_back(vin);
         tx.vout.push_back(vout);
 
