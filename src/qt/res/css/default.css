@@ -19,39 +19,45 @@
 /*       but valid ones are commented out, not removed, in case they will be needed     */
 /*       again in the future.                                                           */
 /*                                                                                      */
+/*  #003167    new background color                                                     */
+/*  #f5f5f6    lightbackground text                                                     */
+/*  #002140    button  background                                                       */
+/*  #ffb506    yellow tint                                                              */
+/*  #012241    dark text                                                                */
 /****************************************************************************************/
-
 WalletFrame {
 border-image: url(':/images/walletFrame_bg') 0 0 0 0 stretch stretch;
-border-top:0px solid #000;
+border-top:0px solid #003167;
 margin:0;
 padding:0;
 }
 
 QStatusBar {
-background-color:#ffffff;
+background-color:#003167;
+color:#012241;
 }
 
 .QFrame {
 background-color:transparent;
-border:0px solid #fff;
+border:0px solid #003167;
 }
 
 QMenuBar {
-background-color:#fff;
+background-color:#003167;
 }
 
 QMenuBar::item {
-background-color:#fff;
-color:#102E5C;
+background-color:#003167;
+color:#ffffff;
 }
 
 QMenuBar::item:selected {
-background-color:#f8f6f6;
+background-color:#003167;
+color:#ffb506
 }
 
 QMenu {
-background-color:#f8f6f6;
+background-color:#f5f5f6;
 }
 
 QMenu::item {
@@ -60,11 +66,11 @@ color:#102E5C;
 
 QMenu::item:selected {
 background-color:#f2f0f0;
-color:#102E5C;
+color:#003167;
 }
 
 QToolBar {
-background-color: #0C2649;
+background-color: #003167;
 border:0px solid #102E5C;
 padding:1;
 margin:0;
@@ -73,7 +79,7 @@ width: 70px;
 
 QToolBar > QToolButton {
 Alignment: left;
-background-color: #0C2649;
+background-color: #ffb506;
 selection-background-color:transparent;
 border:0.5px solid #888;
 border-left: 0px;
@@ -82,7 +88,7 @@ border-top: 0px;
 min-height:2.5em;
 padding: 0em 0em;
 font-size: 11px;
-color:#aaa;
+color: #012241;;
 width: 80px;
 height: 60px;
 }
@@ -127,13 +133,18 @@ width: 20px;
 
 QLabel#progressBarLabel {
 background-color:transparent;
-color: #0C2649;
+color: #ffffff;
 padding-left:5px;
 padding-right:5px;
 }
 
+QStackedWidget{
+background-color:#003167;
+}
+
 QTabWidget {
-background-color:#f2f2f2;
+background-color:#003167;
+color:#ffffff;
 }
 
 QTabWidget::pane {
@@ -157,28 +168,28 @@ outline:0; /* Remove Annoying Focus Rectangle */
 }
 
 QGroupBox {
-background-color:#fcfcfc;
-color:#102E5C;
+background-color:#f5f5f6;
+color:#012241;
 }
 
 QToolTip {
-background-color:#dedbe5;
-color:#102E5C;
+background-color:#003167;
+color:#ffb506;
 }
 
 /****************************************************************************************/
 
 QLabel { /* Base Text Size & Color */
 font-size:12px;
-color:#102E5C;
+color:#012241;
 }
 
 .QRadioButton { /* Radio Button Labels */
-color:#102E5C;
+color:#012241;
 }
 
 .QCheckBox { /* Checkbox Labels */
-color:#102E5C;
+color:#012241;
 }
 
 .QCheckBox:hover {
@@ -190,8 +201,10 @@ min-height:25px;
 outline:0;
 padding:3px;
 border:0px;
-color:#102E5C;
-background-color:#f2f2f2;
+color:#012241;
+padding-left: 10px;
+background-color:#f5f5f6;
+border-radius:15px;
 }
 
 .QValidatedLineEdit:!focus {
@@ -217,17 +230,15 @@ background-color:#f2f2f2;
 }
 
 .QPlainTextEdit {
-background-color:#f2f2f2;
+background-color:#f5f5f6;
 }
 
 /***************************** Global Qt Objects ***********************************************************/
 
 QPushButton { /* Global Button Style */
-background-color: #123263; 
-border-width: 1px;
-border-style: outset;
-border-color: #D1A43F;
-border-radius: 2px;
+background-color: #002140;
+border: none;
+border-radius: 13px;
 color:#ffffff;
 font-size:12px;
 font-weight:bold;
@@ -241,7 +252,7 @@ margin: 2px;
 
 QPushButton:hover {
 color: #ffffff;
-background-color: qlineargradient(y1:0, y2: 1, stop: 0 #D1A43F, stop: 0.05 #D1A43F, stop: 0.051 #F2B740, stop: 0.95 #F2B740, stop: 0.951 #D1A43F, stop: 1 #D1A43F);
+background-color:#ffb506;
 }
 
 QPushButton:focus {
@@ -405,8 +416,8 @@ outline:0;
 
 QHeaderView::section { /* Table Header Sections */
 qproperty-alignment:center;
-background-color: #123263;
-color:#fff;
+background-color: #002140;
+color:#ffb506;
 min-height:25px;
 font-weight:bold;
 font-size:11px;
@@ -437,23 +448,23 @@ border:0;
 
 .QTableView { /* Table - has to be selected as a class otherwise it throws off QCalendarWidget */
 background:transparent;
-border:1px solid #102E5C;
+border:1px solid #003167;
 }
 
 QTableView::item { /* Table Item */
-background-color:#fcfcfc;
+background-color:#f5f5f6;
 font-size:12px;
 }
 
 QTableView::item:selected { /* Table Item Selected */
-background-color:#123263;
+background-color:#002140;
 color:#fff;
 }
 
 QTableWidget { /* Table Background */
-background-color: #fcfcfc;
+background-color: #f5f5f6;
 alternate-background-color: yellow;
-border:1px solid #102E5C;
+border:1px solid #003167;
 }
 
 QTableWidget:focus, QTableView, QTableView:focus { /* Remove focus outline */
@@ -462,9 +473,9 @@ background:transparent;
 }
 
 QTreeWidget { /* Tree Background */
-background-color:#fcfcfc;
+background-color:#f5f5f6;
 alternate-background-color:#f2f2f2;
-color:#102E5C;
+color:#012241;
 }
 
 QScrollBar { /* Scroll Bar */
@@ -473,20 +484,20 @@ QScrollBar { /* Scroll Bar */
 
 QScrollBar:vertical { /* Vertical Scroll Bar Attributes */
 border:0;
-background:#123263;
+background:#002140;
 width:18px;
 margin:18px 0px 18px 0px;
 }
 
 QScrollBar:horizontal { /* Horizontal Scroll Bar Attributes */
 border:0;
-background:#123263;
+background:#002140;
 height:18px;
 margin:0px 18px 0px 18px;
 }
 
 QScrollBar::handle:vertical { /* Scroll Bar Slider - vertical */
-background:#123263;
+background:#002140;
 min-height:10px;
 }
 
@@ -496,7 +507,7 @@ min-height:10px;
 }
 
 QScrollBar::handle:horizontal { /* Scroll Bar Slider - horizontal */
-background:#123263;
+background:#002140;
 min-width:10px;
 }
 
@@ -510,7 +521,7 @@ background:#F8F6F6;
 }
 
 QScrollBar::add-line:vertical, QScrollBar::sub-line:vertical, QScrollBar::add-line:horizontal, QScrollBar::sub-line:horizontal { /* Define Arrow Button Dimensions */
-background-color:#F8F6F6;
+background-color:#f5f5f6;
 border: 1px solid #f2f0f0;
 width:16px;
 height:16px;
@@ -908,7 +919,8 @@ border:1px solid #0C2649;
 QLabel#labelOverviewHeaderLeft {
 font-weight:bold;
 font-size:20px;
-background-color:#ffffff;
+background-color:transparent;
+color:#f5f5f6;
 }
 
 QLabel#labelOverviewHeaderRight {
@@ -919,12 +931,12 @@ background-repeat: no-repeat;
 
 QWidget .QFrame#frame_Header { /* Header with Page-Title and BASE-image */
 min-width:400px;
-background-color:#ffffff;
+background-color:#003167;
 }
 
 QWidget .QFrame#frame_BG { /* Background */
 min-width:400px;
-background-color:#f8f6f6;
+background-color:#003167;
 }
 
 /**************************** OVERVIEW SCREEN *******************************************/
@@ -1394,15 +1406,14 @@ padding-left:0px;
 color:#102E5C;
 min-height:27px;
 }
-
 /**************************** SEND COINS ENTRY ******************************************/
-
 QStackedWidget#SendCoinsEntry .QFrame#SendCoins > .QLabel { /* Send Coin Entry Labels */
 min-width:10px;
 font-weight:bold;
 min-height:25px;
 margin-right:5px;
 padding-right:5px;
+background-color:#003167;
 }
 
 /* QStackedWidget#SendCoinsEntry .QValidatedLineEdit#payTo { /* Pay To Input Field */
