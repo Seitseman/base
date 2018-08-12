@@ -45,6 +45,7 @@
 
 #include <QApplication>
 #include <QDebug>
+#include <QFontDatabase>
 #include <QLibraryInfo>
 #include <QLocale>
 #include <QMessageBox>
@@ -512,6 +513,14 @@ WId BitcoinApplication::getMainWinId() const
 
     return window->winId();
 }
+void setupFonts() {
+    int id = QFontDatabase::addApplicationFont(":/fonts/Lato-Regular.ttf");
+    id = QFontDatabase::addApplicationFont(":/fonts/Lato-Black.ttf");
+    id = QFontDatabase::addApplicationFont(":/fonts/Lato-Black.ttf");
+    id = QFontDatabase::addApplicationFont(":/fonts/Lato-Bold.ttf");
+    id = QFontDatabase::addApplicationFont(":/fonts/Lato-Hairline.ttf");
+    id = QFontDatabase::addApplicationFont(":/fonts/Lato-Light.ttf");
+}
 
 #ifndef BITCOIN_QT_TEST
 int main(int argc, char* argv[])
@@ -559,6 +568,7 @@ int main(int argc, char* argv[])
     QApplication::setOrganizationDomain(QAPP_ORG_DOMAIN);
     QApplication::setApplicationName(QAPP_APP_NAME_DEFAULT);
     GUIUtil::SubstituteFonts(GetLangTerritory());
+    setupFonts();
 
     /// 4. Initialization of translations, so that intro dialog is in user's language
     // Now that QSettings are accessible, initialize translations

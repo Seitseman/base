@@ -1,4 +1,4 @@
-<!DOCTYPE RCC><RCC version="1.0">
+<RCC>
     <qresource prefix="/icons">
         <file alias="bitcoin">res/icons/bitcoin.png</file>
         <file alias="address-book">res/icons/address-book.png</file>
@@ -114,5 +114,18 @@
         <file alias="spinner-032">res/movies/spinner-032.png</file>
         <file alias="spinner-033">res/movies/spinner-033.png</file>
         <file alias="spinner-034">res/movies/spinner-034.png</file>
+    </qresource>
+    <qresource prefix="/fonts">
+        <file alias="Lato-Black.ttf">res/fonts/Lato-Black.ttf</file>
+        <file alias="Lato-BlackItalic.ttf">res/fonts/Lato-BlackItalic.ttf</file>
+        <file alias="Lato-Bold.ttf">res/fonts/Lato-Bold.ttf</file>
+        <file alias="Lato-BoldItalic.ttf">res/fonts/Lato-BoldItalic.ttf</file>
+        <file alias="Lato-Hairline.ttf">res/fonts/Lato-Hairline.ttf</file>
+        <file alias="Lato-HairlineItalic.ttf">res/fonts/Lato-HairlineItalic.ttf</file>
+        <file alias="Lato-Italic.ttf">res/fonts/Lato-Italic.ttf</file>
+        <file alias="Lato-Light.ttf">res/fonts/Lato-Light.ttf</file>
+        <file alias="Lato-LightItalic.ttf">res/fonts/Lato-LightItalic.ttf</file>
+        <file alias="Lato-Regular.ttf">res/fonts/Lato-Regular.ttf</file>
+        <file>res/fonts/OFL.txt</file>
     </qresource>
 </RCC>
